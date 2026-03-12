@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismael Franco Ruiz | Web Developer Portfolio</title>
+    <meta name="description" content="Portfolio profesional de Ismael Franco Ruiz, Desarrollador de Aplicaciones Web apasionado por la IA y la tecnología.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Leaflet for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <!-- Brand Preloader [NEW] -->
+    <div id="preloader" class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo">IFR</div>
+            <div class="preloader__line"></div>
+        </div>
+    </div>
+
+    <div class="progress-bar" id="scrollProgress"></div>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <img src="logo.png" alt="IFR Logo">
+            </div>
+            <div class="header__actions">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+            </div>
+            <ul class="nav__list">
+                <li><a href="#inicio" class="nav__link" data-t="nav.home">Inicio</a></li>
+                <li><a href="#sobre-mi" class="nav__link" data-t="nav.about">Sobre Mí</a></li>
+                <li><a href="#habilidades" class="nav__link" data-t="nav.skills">Habilidades</a></li>
+                <li><a href="#experiencia" class="nav__link" data-t="nav.exp">Experiencia</a></li>
+                <li><a href="#contacto" class="nav__link" data-t="nav.contact">Contacto</a></li>
+                <li>
+                    <a href="https://github.com/ismaafr6" target="_blank" class="nav__social-link" title="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58V22"></path></svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero section">
+            <div class="container hero__grid reveal">
+                <div class="hero__content">
+                    <span class="hero__badge" data-t="hero.badge">Desarrollador en formación</span>
+                    <h1 class="hero__title">Hola, soy <span class="highlight">Ismael Franco Ruiz</span></h1>
+                    <p class="hero__subtitle" id="typewriter-text"></p>
+                    <div class="hero__actions">
+                        <a href="#contacto" class="btn btn--primary" data-t="hero.btn1">Hablemos</a>
+                        <a href="assets/docs/CV_Ismael_Franco_Ruiz_Oficial.pdf" class="btn btn--secondary" download="CV_Ismael_Franco_Ruiz_Oficial.pdf" data-t="hero.btn2">Descargar CV</a>
+                    </div>
+                    <div class="hero__gif-container">
+                        <img src="https://media.tenor.com/2m65m8xY9mYAAAAC/coding-programmer.gif" alt="Tech Animation" class="tech-gif">
+                    </div>
+                </div>
+                <div class="hero__image-container">
+                    <div class="portrait-frame">
+                        <img src="portrait.png" alt="Ismael Franco Ruiz" class="hero__portrait">
+                    </div>
+                </div>
+            </div>
+            <div class="hero__bg-glow hero__bg-glow--1"></div>
+            <div class="hero__bg-glow hero__bg-glow--2"></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre-mi" class="about section container reveal">
+            <div class="section__header">
+                <h2 class="section__title" data-t="about.title">Perfil Profesional</h2>
+                <div class="section__underline"></div>
+            </div>
+            <div class="about__grid">
+                <div class="about__text">
+                    <p class="about__quote" data-t="about.quote">"Mi objetivo es contribuir al crecimiento de las empresas mediante soluciones tecnológicas innovadoras mientras perfecciono mis habilidades como técnico superior."</p>
+                    <p data-t="about.p1">Soy un apasionado de la informática, con una formación sólida en el <strong>I.E.S. Azarquiel</strong>. Me destaco por mi proactividad, creatividad y mi gran interés por la Inteligencia Artificial.</p>
+                    <p data-t="about.p2">Cuento con vehículo propio y plena disponibilidad para incorporarme a entornos de trabajo híbridos o presenciales en Toledo.</p>
+                </div>
+                <div class="about__info card">
+                    <div class="info-group">
+                        <span class="info-label" data-t="about.loc_label">Ubicación</span>
+                        <span class="info-value">Toledo, España</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label" data-t="about.age_label">Edad</span>
+                        <span class="info-value" data-t="about.age_val">19 años (16/04/2006)</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label" data-t="about.license_label">Carnets</span>
+                        <span class="info-value" data-t="about.license_val">B, AM (Vehículo propio)</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label" data-t="about.lang_label">Idiomas</span>
+                        <span class="info-value" data-t="about.lang_val">Español (Nativo), Inglés (B1)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="habilidades" class="skills section container reveal">
+            <div class="section__header">
+                <h2 class="section__title" data-t="skills.title">Stack Tecnológico</h2>
+                <div class="section__underline"></div>
+            </div>
+            <div class="skills__grid">
+                <!-- AI & Innovation [TOP SKILL] -->
+                <div class="skills__category card skills__category--featured">
+                    <div class="badge-top">Top Skill</div>
+                    <h3 data-t="skills.ai_title">IA & Innovación</h3>
+                    <ul class="skill-list">
+                        <li class="highlight-skill">Prompt Engineering & Automation</li>
+                        <li class="highlight-skill">Model Fine-tuning (Básico)</li>
+                        <li>Integración de APIs de IA</li>
+                        <li>Análisis de Datos con IA</li>
+                    </ul>
+                </div>
+                <!-- Frontend -->
+                <div class="skills__category card">
+                    <h3 data-t="skills.f_title">Frontend</h3>
+                    <ul class="skill-list">
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React / Next.js</li>
+                        <li data-t="skills.f_res">Diseño Responsivo</li>
+                    </ul>
+                </div>
+                <!-- Backend & DB -->
+                <div class="skills__category card">
+                    <h3 data-t="skills.b_title">Backend & DB</h3>
+                    <ul class="skill-list">
+                        <li>Java / Spring</li>
+                        <li>PHP / SQL</li>
+                        <li>Python (Básico / IA)</li>
+                    </ul>
+                </div>
+                <!-- Tools -->
+                <div class="skills__category card">
+                    <h3 data-t="skills.t_title">Herramientas</h3>
+                    <ul class="skill-list">
+                        <li>Git / GitHub</li>
+                        <li>OutSystems</li>
+                        <li data-t="skills.t_hard">Gestión de Hardware</li>
+                        <li data-t="skills.t_soft">Gestión de Software</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Projects Section [NEW] -->
+        <section id="proyectos" class="projects section container reveal">
+            <div class="section__header">
+                <h2 class="section__title" data-t="projects.title">Proyectos Destacados</h2>
+                <div class="section__underline"></div>
+            </div>
+            <div class="projects__grid">
+                <!-- Green Bits -->
+                <a href="https://green-bits-8j97.vercel.app" target="_blank" class="project-card">
+                    <img src="assets/projects/project_greenbits.png" alt="Green Bits" class="project-img">
+                    <div class="project-content">
+                        <h3>Green Bits</h3>
+                        <p data-t="projects.p1">Plataforma enfocada en sostenibilidad digital y optimización de recursos web.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Tailwind</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- MJI Films -->
+                <a href="https://proy-final-dwec.vercel.app" target="_blank" class="project-card">
+                    <img src="assets/projects/project_dwec.png" alt="MJI Films" class="project-img">
+                    <div class="project-content">
+                        <h3>MJI Films</h3>
+                        <p data-t="projects.p2">Sitio web de recomendación y descubrimiento de películas con algoritmos personalizados.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">API Rest</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- IMA Studio -->
+                <a href="https://ima-studio2-daw.vercel.app" target="_blank" class="project-card">
+                    <img src="assets/projects/project_imastudio.png" alt="IMA Studio" class="project-img">
+                    <div class="project-content">
+                        <h3>IMA Studio</h3>
+                        <p data-t="projects.p3">Solución integral para presencia digital y marketing estratégico para negocios.</p>
+                        <div class="project-tags">
+                            <span class="tag">Creative</span>
+                            <span class="tag">Marketing</span>
+                            <span class="tag">Web Design</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Space Community -->
+                <a href="https://space-cmty.vercel.app" target="_blank" class="project-card">
+                    <img src="assets/projects/project_spacecmty.png" alt="Space Community" class="project-img">
+                    <div class="project-content">
+                        <h3>Space Community</h3>
+                        <p data-t="projects.p4">Comunidad interactiva para entusiastas del espacio con datos en tiempo real.</p>
+                        <div class="project-tags">
+                            <span class="tag">Full Stack</span>
+                            <span class="tag">Real-time</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Experience & Education -->
+        <section id="experiencia" class="experience section container reveal">
+            <div class="section__header">
+                <h2 class="section__title" data-t="exp.title">Experiencia y Formación</h2>
+                <div class="section__underline"></div>
+            </div>
+            <div class="dual-timeline">
+                <div class="timeline-col">
+                    <h3 class="timeline-title" data-t="exp.col1">Laboral</h3>
+                    <div class="timeline">
+                        <div class="timeline__item">
+                            <div class="timeline__date">2025</div>
+                            <div class="timeline__content card">
+                                <h3>Kanzan Tech</h3>
+                                <h4 data-t="exp.l1_role">Prácticas Online (OutSystems)</h4>
+                                <p data-t="exp.l1_desc">Desarrollo de aplicaciones web y procesos de negocio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-col">
+                    <h3 class="timeline-title" data-t="exp.col2">Académica</h3>
+                    <div class="timeline">
+                        <div class="timeline__item">
+                            <div class="timeline__date">2024 - 2026</div>
+                            <div class="timeline__content card">
+                                <h3>I.E.S. Azarquiel</h3>
+                                <h4 data-t="exp.a1_title">G.S. Desarrollo de Aplicaciones Web</h4>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__date">2022 - 2024</div>
+                            <div class="timeline__content card">
+                                <h3>I.E.S. Montes de Toledo</h3>
+                                <h4 data-t="exp.a2_title">Bachillerato (CC. Sociales)</h4>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__date">2018 - 2022</div>
+                            <div class="timeline__content card">
+                                <h3>I.E.S. Montes de Toledo</h3>
+                                <h4 data-t="exp.a3_title">Educación Secundaria Obligatoria (ESO)</h4>
+                            </div>
+                        </div>
+                        <!-- Graduation Image -->
+                        <div class="timeline__image card">
+                            <img src="assets/images/grad.png" alt="Graduación Ismael" class="grad-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="contact section container reveal">
+             <div class="section__header">
+                <h2 class="section__title" data-t="contact.title">¿Hablamos?</h2>
+                <div class="section__underline"></div>
+            </div>
+            <div class="contact__grid">
+                <div class="card">
+                    <form class="contact__form" action="https://formsubmit.co/ismaafr6@gmail.com" method="POST">
+                        <!-- FormSubmit configuration -->
+                        <input type="hidden" name="_subject" value="Nuevo contacto desde Portfolio!">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://google.com"> <!-- User can change this later -->
+                        
+                        <!-- Honeypot para evitar spam de bots -->
+                        <input type="text" name="_honey" style="display:none">
+                        
+                        <div class="form-group">
+                            <label for="name" data-t="contact.label_name">Nombre</label>
+                            <input type="text" name="name" id="name" required minlength="3">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-t="contact.label_email">Email</label>
+                            <input type="email" name="email" id="email" required 
+                                   pattern="[a-z0-0._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                   title="Por favor, introduce un correo válido (ej: nombre@dominio.com)">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-t="contact.label_msg">Mensaje</label>
+                            <textarea name="message" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary" data-t="contact.btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+                <!-- Location Map -->
+                <div class="card map-container">
+                    <div id="map"></div>
+                    <div class="map-overlay">
+                        <h3 data-t="map.title">Toledo, ES</h3>
+                        <p data-t="map.sub">Base de Operaciones Digital</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a href="assets/docs/CV_Ismael_Franco_Ruiz_Oficial.pdf" class="fab-cv" download="CV_Ismael_Franco_Ruiz_Oficial.pdf" title="Descargar CV">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+    </a>
+
+    <footer class="footer">
+        <div class="container footer__content">
+            <div class="footer__socials">
+                <a href="https://github.com/ismaafr6" target="_blank" title="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58V22"></path></svg>
+                </a>
+            </div>
+            <p>&copy; 2026 Ismael Franco Ruiz | <span data-t="footer.rights">Todos los derechos reservados.</span></p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
