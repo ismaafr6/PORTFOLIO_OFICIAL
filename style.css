@@ -177,8 +177,16 @@ body {
     perspective: 1000px; /* Enable 3D depth */
 }
 
-h1, h2, h3, .nav__logo {
+h1, h2, h3 {
     font-family: 'Outfit', sans-serif;
+}
+
+.nav__logo span {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
 }
 
 .container {
