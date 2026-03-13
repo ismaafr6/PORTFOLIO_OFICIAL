@@ -1038,6 +1038,16 @@ h1, h2, h3, .nav__logo {
         display: none !important;
     }
 
+    .contact__grid {
+        display: block;
+        width: 100%;
+    }
+
+    .contact__grid .card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
     .menu-btn {
         display: block;
         z-index: 1001;
