@@ -943,107 +943,123 @@ h1, h2, h3, .nav__logo {
 
 @media (max-width: 768px) {
     html {
-        font-size: 13px;
+        font-size: 12px; /* Proportional scaling of all elements */
     }
 
     .container {
-        padding: 0 1rem;
+        padding: 0 1.2rem;
     }
 
     .section {
-        padding: 6rem 0; /* Clear vertical separation to avoid "joined" look */
+        padding: 4rem 0;
     }
 
-    .section__header {
-        margin-bottom: 3rem;
-    }
-
-    .section__title {
-        font-size: 2.2rem;
-    }
-
-    /* Hero Spacing Correction */
+    /* Forced Safe Zone below fixed Header */
     .hero {
-        min-height: auto;
-        padding-top: 120px; /* Increased to avoid header overlap */
-        padding-bottom: 4rem;
+        min-height: auto !important;
+        padding-top: 140px !important;
+        padding-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    /* ... */
+    .hero__badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+        margin-bottom: 1rem;
+    }
 
-    /* Hide map on mobile as requested */
+    .hero__title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .hero__subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        max-width: 100%;
+    }
+
+    /* Radical Portrait Shrinkage */
+    .hero__image-container {
+        order: -1; /* Image stays above text but with enough gap */
+        margin-bottom: 1.5rem;
+    }
+
+    .portrait-frame {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+
+    .card {
+        padding: 1.2rem;
+        border-radius: 16px;
+    }
+
+    /* Skills & Projects */
+    .skills__grid, .projects__grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .skills__grid > *, .projects__grid > * {
+        flex: 0 0 85%;
+    }
+
+    /* Map & Contact */
     .map-container {
         display: none !important;
     }
 
     .contact__grid {
-        display: block; /* Form takes full width */
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .map-container {
-        height: 100%; /* Match form height */
-        min-height: 300px;
-    }
-
-    .map-overlay {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-        padding: 1rem;
-        max-width: 150px;
-        font-size: 0.8rem;
-    }
-
-    .timeline__item {
-        margin-bottom: 2rem;
-    }
-
-    .timeline__image {
-        margin-bottom: 2rem; /* Avoid overlap with what's below */
+        display: block;
+        width: 100%;
     }
 
     .footer {
-        padding: 4rem 0;
-        border-top: 1px solid var(--glass-border);
-        background: #000000;
-        text-align: center;
-        margin-top: 4rem; /* Safe distance */
-    }
-
-    .footer__content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
+        padding: 3rem 0;
+        margin-top: 2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .hero {
-        padding-top: 100px; /* Slightly less for very small screens but still safe */
+    html {
+        font-size: 11px;
     }
-
-    .section {
-        padding: 4rem 0;
+    
+    .hero {
+        padding-top: 130px !important;
     }
 
     .hero__title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
-    .contact__grid {
-        display: block;
+    .portrait-frame {
+        width: 100px;
+        height: 100px;
+    }
+
+    .section {
+        padding: 3rem 0;
     }
 
     .hero__actions {
         flex-direction: column;
         width: 100%;
+        gap: 0.8rem;
     }
 
     .btn {
         width: 100%;
-        text-align: center;
+        padding: 0.8rem;
+        font-size: 0.9rem;
     }
 }
