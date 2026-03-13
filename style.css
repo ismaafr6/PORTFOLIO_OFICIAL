@@ -968,7 +968,7 @@ h1, h2, h3, .nav__logo {
 
 @media (max-width: 768px) {
     html {
-        font-size: 13px; /* Even smaller base */
+        font-size: 13px;
     }
 
     .container {
@@ -976,11 +976,11 @@ h1, h2, h3, .nav__logo {
     }
 
     .section {
-        padding: 1.5rem 0; /* Radical reduction */
+        padding: 3rem 0; /* Balanced spacing */
     }
 
     .section__header {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     .section__title {
@@ -990,7 +990,7 @@ h1, h2, h3, .nav__logo {
     .hero {
         min-height: auto;
         padding-top: 60px;
-        padding-bottom: 2rem;
+        padding-bottom: 2.5rem;
     }
 
     .hero__title {
@@ -1007,17 +1007,16 @@ h1, h2, h3, .nav__logo {
     }
 
     .portrait-frame {
-        width: 120px; /* Even smaller */
+        width: 120px;
         height: 120px;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
     
     .card {
-        padding: 1rem;
+        padding: 1.2rem;
         border-radius: 12px;
     }
 
-    /* Horizontal Swiping for Grids */
     .skills__grid, .projects__grid {
         display: flex;
         overflow-x: auto;
@@ -1025,15 +1024,14 @@ h1, h2, h3, .nav__logo {
         gap: 1rem;
         padding-bottom: 1rem;
         -webkit-overflow-scrolling: touch;
-        grid-template-columns: none; /* Override grid */
+        grid-template-columns: none;
     }
 
     .skills__grid > *, .projects__grid > * {
-        flex: 0 0 85%; /* Shows most of one card and a bit of the next */
+        flex: 0 0 85%;
         scroll-snap-align: center;
     }
 
-    /* Hide scrollbars but keep functionality */
     .skills__grid::-webkit-scrollbar, .projects__grid::-webkit-scrollbar {
         display: none;
     }
@@ -1043,8 +1041,10 @@ h1, h2, h3, .nav__logo {
     }
 
     .contact__grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns as requested */
+        gap: 1rem;
+        align-items: stretch;
     }
 
     .map-container {
@@ -1063,11 +1063,29 @@ h1, h2, h3, .nav__logo {
     .timeline__item {
         margin-bottom: 1.5rem;
     }
+
+    .footer {
+        padding: 3rem 0;
+        border-top: 1px solid var(--glass-border);
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    .footer__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
     .section {
-        padding: 1.2rem 0;
+        padding: 2.5rem 0;
+    }
+
+    .contact__grid {
+        grid-template-columns: 1fr; /* Better for small screens */
     }
 
     .hero__title {
@@ -1075,24 +1093,14 @@ h1, h2, h3, .nav__logo {
     }
 
     .hero__actions {
-        flex-direction: row; /* Keep them in line if possible to save height */
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.6rem;
     }
 
     .btn {
-        width: auto;
-        min-width: 140px;
-        padding: 0.6rem 1rem;
-        font-size: 0.85rem;
-    }
-
-    .section__title {
-        font-size: 1.5rem;
-    }
-
-    .preloader__logo {
-        font-size: 1.80rem;
+        min-width: 120px;
+        padding: 0.6rem 0.8rem;
     }
 }
