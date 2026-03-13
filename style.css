@@ -962,56 +962,24 @@ h1, h2, h3, .nav__logo {
         font-size: 2.2rem;
     }
 
+    /* Hero Spacing Correction */
     .hero {
         min-height: auto;
-        padding-top: 100px;
+        padding-top: 120px; /* Increased to avoid header overlap */
         padding-bottom: 4rem;
     }
 
-    .hero__title {
-        font-size: 2.4rem;
+    /* ... */
+
+    /* Hide map on mobile as requested */
+    .map-container {
+        display: none !important;
     }
 
-    .hero__subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-    }
-
-    .hero__gif-container {
-        display: none;
-    }
-
-    .portrait-frame {
-        width: 140px;
-        height: 140px;
-        margin-bottom: 2rem;
-        border-radius: 50%;
-    }
-    
-    .card {
-        padding: 1.5rem;
-        border-radius: 16px;
-    }
-
-    /* Forced 2-column scroll for Skills/Projects */
-    .skills__grid, .projects__grid {
-        display: flex;
-        overflow-x: auto;
-        gap: 1.2rem;
-        padding-bottom: 1.5rem;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .skills__grid > *, .projects__grid > * {
-        flex: 0 0 85%;
-    }
-
-    /* Fixed Contact Grid: ALWAYS 2 COLUMNS AS REQUESTED */
     .contact__grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr; /* Form slightly wider than map */
-        gap: 1.5rem;
-        align-items: stretch;
+        display: block; /* Form takes full width */
+        max-width: 600px;
+        margin: 0 auto;
     }
 
     .map-container {
@@ -1053,21 +1021,20 @@ h1, h2, h3, .nav__logo {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding-top: 100px; /* Slightly less for very small screens but still safe */
+    }
+
     .section {
         padding: 4rem 0;
     }
 
     .hero__title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .contact__grid {
-        grid-template-columns: 1fr 1fr; /* KEEP 2 COLUMNS even on small phones */
-        gap: 0.8rem;
-    }
-
-    .map-container {
-        min-height: 250px;
+        display: block;
     }
 
     .hero__actions {
