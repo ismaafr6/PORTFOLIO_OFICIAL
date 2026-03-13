@@ -1103,8 +1103,9 @@ h1, h2, h3, .nav__logo {
         padding-top: 130px !important;
     }
 
-    .hero__title {
-        font-size: 1.5rem;
+    .contact__grid .card {
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .portrait-frame {
