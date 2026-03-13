@@ -945,7 +945,7 @@ h1, h2, h3, .nav__logo {
     .hero__grid {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem; /* Reduced gap */
+        gap: 1.5rem;
     }
     
     .hero__content {
@@ -953,7 +953,7 @@ h1, h2, h3, .nav__logo {
     }
     
     .hero__subtitle {
-        margin: 0 auto 2rem auto;
+        margin: 0 auto 1.5rem auto;
     }
     
     .hero__actions {
@@ -962,130 +962,137 @@ h1, h2, h3, .nav__logo {
     
     .dual-timeline {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
     html {
-        font-size: 14px; /* Global root scaling down */
+        font-size: 13px; /* Even smaller base */
     }
 
     .container {
-        padding: 0 1rem;
+        padding: 0 0.8rem;
     }
 
     .section {
-        padding: 3rem 0;
+        padding: 1.5rem 0; /* Radical reduction */
     }
 
     .section__header {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     .section__title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 60px;
+        padding-bottom: 2rem;
     }
 
     .hero__title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .hero__subtitle {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
     }
 
     .hero__gif-container {
-        display: none; /* Hide heavy vertical elements on mobile */
+        display: none;
     }
 
     .portrait-frame {
-        width: 160px; /* Much smaller portrait */
-        height: 160px;
-        border-radius: 50%; /* Circular for more impact in less space */
-        margin: 0 auto;
+        width: 120px; /* Even smaller */
+        height: 120px;
+        margin-bottom: 1rem;
     }
     
     .card {
-        padding: 1.2rem;
-        border-radius: 16px;
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    /* Horizontal Swiping for Grids */
+    .skills__grid, .projects__grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+        grid-template-columns: none; /* Override grid */
+    }
+
+    .skills__grid > *, .projects__grid > * {
+        flex: 0 0 85%; /* Shows most of one card and a bit of the next */
+        scroll-snap-align: center;
+    }
+
+    /* Hide scrollbars but keep functionality */
+    .skills__grid::-webkit-scrollbar, .projects__grid::-webkit-scrollbar {
+        display: none;
     }
 
     .nav__list {
         display: none;
     }
-    
-    .header__actions {
-        margin-right: 0;
-    }
 
     .contact__grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .map-container {
-        height: 250px;
-    }
-
-    .map-overlay {
-        bottom: 0.5rem;
-        right: 0.5rem;
-        padding: 0.8rem;
-        max-width: 180px;
-    }
-
-    .skills__grid {
         gap: 1.5rem;
     }
 
-    .about__grid {
-        gap: 2rem;
+    .map-container {
+        height: 200px;
+    }
+
+    .map-overlay {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin-top: -10px;
+        max-width: 100%;
+        border-radius: 0 0 12px 12px;
+    }
+
+    .timeline__item {
+        margin-bottom: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
     .section {
-        padding: 2.5rem 0;
+        padding: 1.2rem 0;
     }
 
     .hero__title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .hero__actions {
-        flex-direction: column;
-        width: 100%;
-        gap: 0.8rem;
+        flex-direction: row; /* Keep them in line if possible to save height */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
     }
 
     .btn {
-        width: 100%;
-        text-align: center;
-        padding: 0.7rem 1.2rem;
-        font-size: 0.9rem;
+        width: auto;
+        min-width: 140px;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
     }
 
     .section__title {
-        font-size: 1.6rem;
-    }
-    
-    .skills__grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .card {
-        padding: 1rem;
+        font-size: 1.5rem;
     }
 
     .preloader__logo {
-        font-size: 2rem;
-        letter-spacing: 0.2rem;
-    }
-
-    .skill-card__icon {
-        font-size: 1.5rem;
+        font-size: 1.80rem;
     }
 }
